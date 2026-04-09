@@ -133,11 +133,31 @@ Los hallazgos  revelan que se puede dividir la OCDE en 2 agrupaciones de países
 # DBSCAN
 A diferencia del K-means para el DBSCAN se necesita una estimación de la mejor épsilon posible (eps), así como del mínimo de punto (min_samples) pues el algoritmo DBSCAN depende críticamente de estos dos parámetros, todo mediante el método del codo y la distribución de la densidad en los datos.
 
-Para seleccionar las variables eps óptima y  min_samples se realiza un proceso de iteración sobre una lista de candidatos para min_samples y se estima un eps usando el método del codo para cada candidato a min_samples, luego se va refinando la eps en un radio muy cercano para que al final se evalúa cada combinación de (eps ,min_samples) basándose principal en el índice de silueta y se selecciona finalmente la combinación con mejores resultados.
+Para seleccionar las variables eps óptima y  min_samples se realiza un proceso de iteración sobre una lista de candidatos para min_samples y se estima un eps usando el método del codo para cada candidato a min_samples, luego se va refinando la eps en un radio muy cercano para que al final se evalúa cada combinación de (eps ,min_samples) basándose principal en el índice de silueta y se selecciona finalmente la combinación con mejores resultados. 
 
-<img width="928" height="413" alt="image" src="https://github.com/user-attachments/assets/9d032f58-3560-42ba-94a5-9fba0b28fbfa" />
+Obteniendo mediante el anterior proceso los optimos, como se muestra la figura
 
-<img width="1354" height="642" alt="image" src="https://github.com/user-attachments/assets/3c23fb49-d96f-45ef-8265-696334f6f703" />
+<img width="928" height="413" alt="image" src="https://github.com/user-attachments/assets/9d032f58-3560-42ba-94a5-9fba0b28fbfa" /><br/>
+
+Asi ya podemos visualizar la clusterizacion DBSCAN, mostrando los paises de ruido representados con -1, y los paises pertenecientes de cada agrupacion 
+
+<img width="1354" height="642" alt="image" src="https://github.com/user-attachments/assets/3c23fb49-d96f-45ef-8265-696334f6f703" /><br/>
+<table>
+  <tr>
+    <th>Clúster</th>
+    <th>Países</th>
+  <tr>
+  <tr>
+    <td>0</td>
+    <td>Alemania, Australia, Austria, Bélgica, Canadá, Chile, Costa Rica, Dinamarca, Eslovenia, España, Estados Unidos, Estonia, Finlandia, Francia, Grecia, Hungría, Irlanda, Islandia, Israel, Italia, Japón, Letonia, Lituania, Luxemburgo, Noruega, Nueva Zelandia, Países Bajos, Portugal, Reino Unido, Republica Checa, República Eslovaca, Suecia, Suiza, Turquía </td>
+  <tr>
+    <tr>
+    <td>1</td>
+    <td>Brasil, Colombia, Mexico </td>
+      <tr>
+    <td>-1</td>
+    <td>Corea del Sur, Polonia, Rusia</td>
+</table><br/>
 
 
 1.	En el clúster 1 muestran a 3 países latinoamericanos exactamente: México, Brasil y Colombia. Aunque no poder económico no está mal, muchas características sociales y económicas se encuentran muy por debajo de los demás países.
@@ -145,6 +165,14 @@ Para seleccionar las variables eps óptima y  min_samples se realiza un proceso 
 3.	Corea del Sur es de los países que más han crecido en los últimos años, con grandes resultados en educación y salud aun con un pobre gasto público y la peor calidad ambiental.
 
 Este modelo identifica los valores atípicos, así como los casos de heterogeneidad estructural que merecen análisis económico individualizado, como el bajo ingreso en instituciones de Latinoamérica aun con buen ingreso o la dependencia de recursos no renovables de Rusia, Polonia y Corea de Sur a pesar de su crecimiento económico y tecnológico.
+
+# Conclusiones
+
+Obteniendo una comprensión más completa entre la relación entre las emisiones de dióxido de carbono, la calidad de vida y el crecimiento verde, confirmando la hipótesis del trabajo pues las economías que han aumentado las emisiones de dióxido de carbono (emergentes) se han envuelto en economías con menor avance del crecimiento verde y de sus factores, ya sean económicos o ambientales, así como menor calidad de vida a aquellas economías que han disminuido la emisión de dióxido de carbono (desarrolladas).
+
+Este proyecto contribuye de manera clara que la gran diferencia entre las economías desarrolladas de las emergentes son los niveles de bienestar socioeconómico, junto a esto los componentes con mayor nivel de información y varianza que proporciona entre todos los datos permitiendo guiar la formulación de políticas públicas más eficaces principalmente en las variables: tasa de mortalidad, índice de crecimiento verde, índice de Gini, tasa de homicidios, habilidades de los estudiantes, la escolaridad, la participación laboral y las ganancias personales además de otras variables con mucha diferencia entre los países como la productividad del agua, así como propuestas de cooperación internacional para el desarrollo económico de los países emergentes y poder acelerar a una transición verde.
+
+Ademas de una comprension personal mas clara del proceso de anlisis de un problema, desde su limpieza como eliminar elementos duplicados, espacios nulos y estandarizar variables y control de la heterocedasticidad hasta la visualizacion general de los datos y de metodos de clusterizacion como el K-mean y DBSCAN. Observando las diferencias de cada algoritmo y su proposito.
 
 
 
